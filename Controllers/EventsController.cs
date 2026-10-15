@@ -26,8 +26,6 @@ namespace sports_events.Controllers
             return Ok(events);
         }
 
-        // POST: api/Events
-
         [HttpPost]
         public IActionResult CreateEvent([FromBody] Event events)
         {

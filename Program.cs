@@ -1,5 +1,10 @@
-using sports_events.Data;
+using FluentAssertions.Common;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using sports_events.Data;
+using sports_events.Models;
+using System.Security.Principal;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,6 +20,9 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
     builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+
+
+
 var app = builder.Build();
 
 
@@ -24,6 +32,11 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    
+    
+
+    //Add JWT Bearer
 
     // Configure Swagger UI to be served at the root URL
     app.UseSwaggerUI(c =>
