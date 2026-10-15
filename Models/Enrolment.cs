@@ -9,7 +9,9 @@ namespace sports_events.Models
 
         public string EnrolmentName { get; set; }
 
-        public string EnrolmentEmail { get; set; }
+        public string EnrolmentType { get; set; }
+
+       
 
 
 

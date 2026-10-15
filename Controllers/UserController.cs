@@ -11,19 +11,28 @@ namespace sports_events.Controllers
     {
         private readonly ApplicationDBContext _context;
 
-        UserController(ApplicationDBContext context)
+        public UserController(ApplicationDBContext context)
         {
             _context = context;
         }
         [HttpGet]
-        public IActionResult GetUsers(string userId,string userName,string userEmail,int UserPhone,string userPassword)
+        public IActionResult GetUsers(string userId, string userName, string userEmail, int UserPhone, string userPassword)
         {
-            
+
             var users = _context.Users.ToList();
             return Ok(users);
-           
+
         }
-        
+       [HttpPost]
+       public IActionResult CreateUser([FromBody] User users)
+        {
+            _context.Users.Add(users);
+            _context.SaveChanges();
+            return Ok(users);
+        }
+
+
+
 
 
     }

@@ -11,7 +11,6 @@ namespace sports_events.Data
         public DbSet<Event> Events { get; set; }
         public DbSet<Result> Results { get; set; }
         public DbSet<Enrolment> Enrolments { get; set; }
-
-        
+        public DbSet<Category> Categories { get; set; }
     }
 }
