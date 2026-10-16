@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using sports_events.Data;
+using sports_events.Models;
 
 namespace sports_events.Controllers
 {
@@ -22,5 +23,6 @@ namespace sports_events.Controllers
             return Ok(categories);
 
         }
+       
     }
 }

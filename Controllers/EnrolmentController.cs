@@ -17,18 +17,18 @@ namespace sports_events.Controllers
         public IActionResult GetEnrolment(int EnrolmentId, string EnrolmentName, string EnrolmentEmail)
         {
 
-            var enrolments = _context.Enrolments.ToList();
-            return Ok(enrolments);
+            var enrolment = _context.Enrolments.ToList();
+            return Ok(enrolment);
 
         }
         [HttpPost]
-        public IActionResult CreateEnrolment([FromBody] Enrolment enrolment)
+        public IActionResult CreateEnrolment([FromBody] Enrolment enrolments)
         {
 
-            _context.Enrolments.Add(enrolment);
+            _context.Enrolments.Add(enrolments);
             _context.SaveChanges();
 
-            return Ok(enrolment);
+            return Ok(enrolments);
         }
     }
 }

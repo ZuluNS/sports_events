@@ -22,8 +22,8 @@ namespace sports_events.Controllers
         [HttpGet]
         public IActionResult GetEvents(string EventId,string EventName,string EventDescription)
         {
-            var events = _context.Events.ToList();
-            return Ok(events);
+            var eventt = _context.Events.ToList();
+            return Ok(eventt);
         }
 
         [HttpPost]

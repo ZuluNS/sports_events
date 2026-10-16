@@ -1,4 +1,4 @@
-﻿namespace sports_events.Data
+﻿namespace sports_events.Models
 {
     public class UserDto
     {

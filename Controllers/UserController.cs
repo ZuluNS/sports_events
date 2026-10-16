@@ -16,7 +16,7 @@ namespace sports_events.Controllers
             _context = context;
         }
         [HttpGet]
-        public IActionResult GetUsers(int UserId, string UserName, string UserEmail, int UserPhone, string UserPassword)
+        public IActionResult GetUsers(int UserId, string UserName, string UserEmail, int UserPhone, string PasswordHash)
         {
 
             var users = _context.Users.ToList();
@@ -24,13 +24,13 @@ namespace sports_events.Controllers
 
         }
         [HttpPost]
-        public IActionResult CreateUser([FromBody] User users)
+        public IActionResult CreateUser([FromBody] User user)
         {
 
-            _context.Users.Add(users);
+            _context.Users.Add(user);
             _context.SaveChanges();
 
-            return Ok(users);
+            return Ok(user);
         }
     }
         
