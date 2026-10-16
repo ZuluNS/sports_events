@@ -9,7 +9,7 @@ namespace sports_events.Models
         public string UserName { get; set; } = string.Empty;
         public string UserEmail { get; set; } = string.Empty;
         public string UserPhone { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
+        public string PasswordHash { get; set; } = string.Empty;
 
     }
 }

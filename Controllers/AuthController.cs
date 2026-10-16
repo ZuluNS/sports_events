@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using sports_events.Data;
 using sports_events.Models;
+using sports_events.Data;
 
 namespace sports_events.Controllers
 {
@@ -17,22 +17,23 @@ namespace sports_events.Controllers
             var hashedPassword = new PasswordHasher<User>().
                 HashPassword(user, request.Password);
             user.UserName = request.UserName;
-            user.Password = hashedPassword;
+            user.PasswordHash = hashedPassword;
             return Ok(user);
         }
         [HttpPost("login")]
-        public ActionResult<User> Login(UserDto request)
-        {
+        public ActionResult<string> Login(UserDto request)
+        {// Check if the username exists
             if (user.UserName != request.UserName)
             {
                 return BadRequest("User not found.");
             }
-            if (new PasswordHasher<User>().VerifyHashedPassword(user, user.Password, request.Password) == 0)
+            if (new PasswordHasher<User>().VerifyHashedPassword(user, user.PasswordHash, request.Password)
+                == PasswordVerificationResult.Failed)
             {
                 return BadRequest("Wrong password.");
             }
-            // Implement login logic here
-            return Ok(user);
+            string token = "success";
+            return Ok(token);
         }
     }
 
