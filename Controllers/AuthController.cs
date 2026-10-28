@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 
 using Microsoft.IdentityModel.Tokens; 
 using sports_events.Data;
@@ -17,6 +19,14 @@ using System.Text;
 using sports_events.Models;
 using sports_events.Data;
 
+=======
+using sports_events.Models;
+using sports_events.Data;
+>>>>>>> 527bd026c0b979f446c5757d3227486c75c5bb69
+=======
+using sports_events.Models;
+using sports_events.Data;
+>>>>>>> 527bd026c0b979f446c5757d3227486c75c5bb69
 =======
 using sports_events.Models;
 using sports_events.Data;
